@@ -1,0 +1,325 @@
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| db                 |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sample             |
+| sys                |
++--------------------+
+7 rows in set (0.00 sec)
+
+mysql> use databases;
+ERROR 1049 (42000): Unknown database 'databases'
+mysql> use sample;
+Database changed
+mysql> select * from demo;
++---------+------+------+------+
+| name    | id   | age  | dep  |
++---------+------+------+------+
+| anu     |    1 | NULL | NULL |
+| rahul   |    2 | NULL | NULL |
+| sana    |    3 | NULL | NULL |
+| mnmn    |    4 | NULL | NULL |
+| muuuuuu | NULL | NULL | NULL |
+| hyla    | NULL | NULL | NULL |
+| neelu   | NULL | NULL | NULL |
+| paru    | NULL | NULL | NULL |
+| wafa    | NULL | NULL | NULL |
+| robin   |   10 |   22 | NULL |
++---------+------+------+------+
+10 rows in set (0.00 sec)
+
+mysql> update demo set id=4 where name="muuuuuu";
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from demo;
++---------+------+------+------+
+| name    | id   | age  | dep  |
++---------+------+------+------+
+| anu     |    1 | NULL | NULL |
+| rahul   |    2 | NULL | NULL |
+| sana    |    3 | NULL | NULL |
+| mnmn    |    4 | NULL | NULL |
+| muuuuuu |    4 | NULL | NULL |
+| hyla    | NULL | NULL | NULL |
+| neelu   | NULL | NULL | NULL |
+| paru    | NULL | NULL | NULL |
+| wafa    | NULL | NULL | NULL |
+| robin   |   10 |   22 | NULL |
++---------+------+------+------+
+10 rows in set (0.00 sec)
+
+mysql> update demo set name="muuuuuu" where id=5;
+Query OK, 0 rows affected (0.00 sec)
+Rows matched: 0  Changed: 0  Warnings: 0
+
+mysql> select * from demo;
++---------+------+------+------+
+| name    | id   | age  | dep  |
++---------+------+------+------+
+| anu     |    1 | NULL | NULL |
+| rahul   |    2 | NULL | NULL |
+| sana    |    3 | NULL | NULL |
+| mnmn    |    4 | NULL | NULL |
+| muuuuuu |    4 | NULL | NULL |
+| hyla    | NULL | NULL | NULL |
+| neelu   | NULL | NULL | NULL |
+| paru    | NULL | NULL | NULL |
+| wafa    | NULL | NULL | NULL |
+| robin   |   10 |   22 | NULL |
++---------+------+------+------+
+10 rows in set (0.00 sec)
+
+mysql> update demo set id=5 where name="muuuuuu";
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from demo;
++---------+------+------+------+
+| name    | id   | age  | dep  |
++---------+------+------+------+
+| anu     |    1 | NULL | NULL |
+| rahul   |    2 | NULL | NULL |
+| sana    |    3 | NULL | NULL |
+| mnmn    |    4 | NULL | NULL |
+| muuuuuu |    5 | NULL | NULL |
+| hyla    | NULL | NULL | NULL |
+| neelu   | NULL | NULL | NULL |
+| paru    | NULL | NULL | NULL |
+| wafa    | NULL | NULL | NULL |
+| robin   |   10 |   22 | NULL |
++---------+------+------+------+
+10 rows in set (0.00 sec)
+
+mysql> update demo set name="aswin" where id=5;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update demo set name="abhay" where id=4;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update demo set id=6 where name="hyla";
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update demo set id=7 where name="neelu";
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update demo set id=8 where name="paru";
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update demo set id=9 where name="wafa";
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from demo;
++-------+------+------+------+
+| name  | id   | age  | dep  |
++-------+------+------+------+
+| anu   |    1 | NULL | NULL |
+| rahul |    2 | NULL | NULL |
+| sana  |    3 | NULL | NULL |
+| abhay |    4 | NULL | NULL |
+| aswin |    5 | NULL | NULL |
+| hyla  |    6 | NULL | NULL |
+| neelu |    7 | NULL | NULL |
+| paru  |    8 | NULL | NULL |
+| wafa  |    9 | NULL | NULL |
+| robin |   10 |   22 | NULL |
++-------+------+------+------+
+10 rows in set (0.00 sec)
+
+mysql> update demo set age=22,dep="MCA" where id=1;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update demo set age=22,dep="BCA" where id=2;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update demo set age=21,dep="MCA" where id=3;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update demo set age=21,dep="Btech" where id=4;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update demo set age=24,dep="Btech" where id=5;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from demo;
++-------+------+------+-------+
+| name  | id   | age  | dep   |
++-------+------+------+-------+
+| anu   |    1 |   22 | MCA   |
+| rahul |    2 |   22 | BCA   |
+| sana  |    3 |   21 | MCA   |
+| abhay |    4 |   21 | Btech |
+| aswin |    5 |   24 | Btech |
+| hyla  |    6 | NULL | NULL  |
+| neelu |    7 | NULL | NULL  |
+| paru  |    8 | NULL | NULL  |
+| wafa  |    9 | NULL | NULL  |
+| robin |   10 |   22 | NULL  |
++-------+------+------+-------+
+10 rows in set (0.00 sec)
+
+mysql> update demo set age=23,dep="Btech" where id=6;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update demo set age=20,dep="Civil" where id=7;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update demo set age=20,dep="Civil" where id=8;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update demo set age=221,dep="Poli" where id=9;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update demo set age=21,dep="Poli" where id=10;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from demo;
++-------+------+------+-------+
+| name  | id   | age  | dep   |
++-------+------+------+-------+
+| anu   |    1 |   22 | MCA   |
+| rahul |    2 |   22 | BCA   |
+| sana  |    3 |   21 | MCA   |
+| abhay |    4 |   21 | Btech |
+| aswin |    5 |   24 | Btech |
+| hyla  |    6 |   23 | Btech |
+| neelu |    7 |   20 | Civil |
+| paru  |    8 |   20 | Civil |
+| wafa  |    9 |  221 | Poli  |
+| robin |   10 |   21 | Poli  |
++-------+------+------+-------+
+10 rows in set (0.00 sec)
+
+mysql> update demo set age=21 where id=9;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from demo;
++-------+------+------+-------+
+| name  | id   | age  | dep   |
++-------+------+------+-------+
+| anu   |    1 |   22 | MCA   |
+| rahul |    2 |   22 | BCA   |
+| sana  |    3 |   21 | MCA   |
+| abhay |    4 |   21 | Btech |
+| aswin |    5 |   24 | Btech |
+| hyla  |    6 |   23 | Btech |
+| neelu |    7 |   20 | Civil |
+| paru  |    8 |   20 | Civil |
+| wafa  |    9 |   21 | Poli  |
+| robin |   10 |   21 | Poli  |
++-------+------+------+-------+
+10 rows in set (0.00 sec)
+
+mysql> select * from table demo where id=10;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'table demo where id=10' at line 1
+mysql> select * from demo where id=10;
++-------+------+------+------+
+| name  | id   | age  | dep  |
++-------+------+------+------+
+| robin |   10 |   21 | Poli |
++-------+------+------+------+
+1 row in set (0.00 sec)
+
+mysql> select * from demo where id>5;
++-------+------+------+-------+
+| name  | id   | age  | dep   |
++-------+------+------+-------+
+| hyla  |    6 |   23 | Btech |
+| neelu |    7 |   20 | Civil |
+| paru  |    8 |   20 | Civil |
+| wafa  |    9 |   21 | Poli  |
+| robin |   10 |   21 | Poli  |
++-------+------+------+-------+
+5 rows in set (0.00 sec)
+
+mysql> select * from demo where id>=5;
++-------+------+------+-------+
+| name  | id   | age  | dep   |
++-------+------+------+-------+
+| aswin |    5 |   24 | Btech |
+| hyla  |    6 |   23 | Btech |
+| neelu |    7 |   20 | Civil |
+| paru  |    8 |   20 | Civil |
+| wafa  |    9 |   21 | Poli  |
+| robin |   10 |   21 | Poli  |
++-------+------+------+-------+
+6 rows in set (0.00 sec)
+
+mysql> select * from demo where id<=5;
++-------+------+------+-------+
+| name  | id   | age  | dep   |
++-------+------+------+-------+
+| anu   |    1 |   22 | MCA   |
+| rahul |    2 |   22 | BCA   |
+| sana  |    3 |   21 | MCA   |
+| abhay |    4 |   21 | Btech |
+| aswin |    5 |   24 | Btech |
++-------+------+------+-------+
+5 rows in set (0.00 sec)
+
+mysql> SHOW COLUMNS from demo
+    -> SHOW COLUMNS from demo;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SHOW COLUMNS from demo' at line 2
+mysql> show columns from demo;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| name  | varchar(10) | YES  |     | NULL    |       |
+| id    | int         | YES  |     | NULL    |       |
+| age   | int         | YES  |     | NULL    |       |
+| dep   | varchar(20) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+4 rows in set (0.02 sec)
+
+mysql> select * from demo where id>5,id<=10;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',id<=10' at line 1
+mysql> select * from demo where id>5 and id<=10;
++-------+------+------+-------+
+| name  | id   | age  | dep   |
++-------+------+------+-------+
+| hyla  |    6 |   23 | Btech |
+| neelu |    7 |   20 | Civil |
+| paru  |    8 |   20 | Civil |
+| wafa  |    9 |   21 | Poli  |
+| robin |   10 |   21 | Poli  |
++-------+------+------+-------+
+5 rows in set (0.00 sec)
+
+mysql> select * from demo where id>7 and id<10;
++------+------+------+-------+
+| name | id   | age  | dep   |
++------+------+------+-------+
+| paru |    8 |   20 | Civil |
+| wafa |    9 |   21 | Poli  |
++------+------+------+-------+
+2 rows in set (0.00 sec)
+
+mysql> select name from demo where name like '_b%';
++-------+
+| name  |
++-------+
+| abhay |
++-------+
+1 row in set (0.00 sec)
